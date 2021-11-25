@@ -10,7 +10,7 @@
 #define SOUND_SW1 8
 #define SOUND_SW2 11
 #define SOUND 7
-#define SERVO_PIN 4
+#define SERVO_PIN 40
 
 Servo servo;
 
@@ -25,7 +25,7 @@ void setup() {
   pinMode(SOUND_SW1, INPUT);
   pinMode(SOUND_SW2, INPUT);
   pinMode(SOUND, OUTPUT);
-  pinMode(SERVO_PIN, INPUT);
+  pinMode(SERVO_PIN, OUTPUT);
   servo.attach(SERVO_PIN);
 }
 
