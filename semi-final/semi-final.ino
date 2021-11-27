@@ -1,6 +1,6 @@
 #include <Servo.h>
 
-#define VRL 25
+#define VRL 24
 #define VYL 29
 #define VGL 33
 #define PRL 22
