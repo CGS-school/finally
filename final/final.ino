@@ -32,6 +32,14 @@ void setup() {
   // 압력 센서
   pinMode(PRESS, INPUT);
   Serial.begin(9600);
+  // 0 : GREEN
+  // 1 : YELLOW
+  // 2 : RED
+  unsigned long VTT[3] = {5000, 1000, 3000};
+  static int VCount = 0;
+  int ISO;
+  static long distance;
+  long* p_dis = &distance;
 }
 
 // 초음파 거리 센서 입력 함수
@@ -44,16 +52,7 @@ void OnOthers(unsigned long VTT[3], int*ISO);
 void turnSound(int ISO, unsigned long VTT, int isGOn);
 
 void loop() {
-  // 0 : GREEN
-  // 1 : YELLOW
-  // 2 : RED
-  unsigned long VTT[3] = {5000, 1000, 3000};
-  static int VCount = 0;
-  int ISO;
-  static long distance;
-  long* p_dis = &distance;
   keep_VGL_on();
-  
   servo.write(0);
   ISO = 0;
   VTimeTaken(VTT[VCount], p_dis, ISO, 0);
@@ -86,6 +85,7 @@ void VTimeTaken(unsigned long VTT, long* p_dis, int ISO, int isGOn)
     *p_dis = ulSenIn();
     Serial.print(*p_dis);
     Serial.println("cm");
+    //delay(10);
 
     if (*p_dis > 11 || isGOn == 1)
     {
