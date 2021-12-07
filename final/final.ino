@@ -31,6 +31,7 @@ void setup() {
   pinMode(ECHO, INPUT);
   // 압력 센서
   pinMode(PRESS, INPUT);
+  Serial.begin(9600);
 }
 
 // 초음파 거리 센서 입력 함수
@@ -65,8 +66,9 @@ void loop() {
     {
       VCount++;
     }
-
-  if (VCount == 1 && distance < 16)
+  Serial.print(distance);
+  Serial.println("cm(main)");
+  if (VCount == 1 && distance < 11)
    {
      digitalWrite(TEST_LED, LOW);
      OnOthers(VTT, &ISO);
@@ -82,8 +84,10 @@ void VTimeTaken(unsigned long VTT, long* p_dis, int ISO, int isGOn)
   {
     old_time = millis();
     *p_dis = ulSenIn();
+    Serial.print(*p_dis);
+    Serial.println("cm");
 
-    if (*p_dis > 9 || isGOn == 1)
+    if (*p_dis > 11 || isGOn == 1)
     {
       digitalWrite(TEST_LED, LOW);
     }

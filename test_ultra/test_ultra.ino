@@ -23,9 +23,9 @@ void loop() {
   distance = duration * 0.034 / 2;
   
   //Serial.print("\nDuration:");
-  //Serial.println(duration);
-  Serial.print(distance);
-  Serial.println("cm");
+  Serial.println(duration);
+  //Serial.print(distance);
+  //Serial.println("cm");
 
   /*if (distance >= 200 || distance <= 0)
   {
