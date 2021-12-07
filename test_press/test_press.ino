@@ -1,4 +1,4 @@
-#define PRESS 13
+#define PRESS A3
 
 void setup()
 {
@@ -11,5 +11,5 @@ void loop()
   value = 1023 - value;
   //value = map(value, 0, 1000, 0, 10000);
   Serial.println(value);
-  delay(500);-
+  delay(500);
 }

@@ -1,18 +1,18 @@
 #include <Servo.h>
 
-#define VRL 24
-#define VYL 29
-#define VGL 33
-#define PRL 22
-#define PGL 36
-#define TEST_LED 49
-#define SOUND 7
-#define SERVO_PIN 40
+#define VRL 22
+#define VYL 26
+#define VGL 30
+#define PRL 48
+#define PGL 32 
+#define TEST_LED 37
+#define SOUND 6
+#define SERVO_PIN 42
 // 초음파 거리 센서
 #define TRIG 9
 #define ECHO 10
 // 압력 센서
-#define PRESS 13
+#define PRESS A3
 
 Servo servo;
 
@@ -83,7 +83,7 @@ void VTimeTaken(unsigned long VTT, long* p_dis, int ISO, int isGOn)
     old_time = millis();
     *p_dis = ulSenIn();
 
-    if (*p_dis > 15 || isGOn == 1)
+    if (*p_dis > 9 || isGOn == 1)
     {
       digitalWrite(TEST_LED, LOW);
     }

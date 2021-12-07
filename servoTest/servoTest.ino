@@ -1,5 +1,5 @@
 #include <Servo.h>
-#define SERVO_PIN 40
+#define SERVO_PIN 42
 
 Servo servo;
 void setup() {

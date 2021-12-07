@@ -1,5 +1,6 @@
 #define TRIG 9
 #define ECHO 10
+// 전에는 pwm에 연결
 
 void setup() {
   // put your setup code here, to run once:
