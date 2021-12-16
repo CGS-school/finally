@@ -35,11 +35,6 @@ void setup() {
   // 0 : GREEN
   // 1 : YELLOW
   // 2 : RED
-  unsigned long VTT[3] = {5000, 1000, 3000};
-  static int VCount = 0;
-  int ISO;
-  static long distance;
-  long* p_dis = &distance;
 }
 
 // 초음파 거리 센서 입력 함수
@@ -52,6 +47,12 @@ void OnOthers(unsigned long VTT[3], int*ISO);
 void turnSound(int ISO, unsigned long VTT, int isGOn);
 
 void loop() {
+  unsigned long VTT[3] = {5000, 1000, 3000};
+  static int VCount = 0;
+  int ISO;
+  static long distance;
+  long* p_dis = &distance;
+  
   keep_VGL_on();
   servo.write(0);
   ISO = 0;
